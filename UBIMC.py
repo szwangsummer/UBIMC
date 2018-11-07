@@ -291,19 +291,7 @@ def GD(epoch,gamma,M_vle=20,l0_vle=1,l1_vle=1,l2_vle=1,l3_vle=1,l4_vle=1,verbose
     return tot_df
 
 
-# # 执行这个跑结果
-
-# The full edition of the optimization function is listed below：
-#     
-#     GD(epoch,gamma,M_vle=20,l0_vle=1,l1_vle=1,l2_vle=1,l3_vle=1,l4_vle=0.001,verbose=0,pre_nmf=False)
-#     
-#     verbose: 每隔多少10**verbose 个 epoch 输出结果， -1为不输出
-#         如：设置为3，每隔1000个epoch进行输出
-
-# In[190]:
-
-
-get_ipython().run_line_magic('time', 'tot_df = GD(1000,0.00001,l1_vle=1,verbose=0,pre_nmf=False)')
+get_ipython().run_line_magic('time', 'tot_df = GD(1000000,0.00001,l1_vle=10,l2_vle=1000,l3_vle=0.1,l4_vle=100,erbose=0,pre_nmf=False)')
 
 
 # In[224]:
@@ -433,10 +421,4 @@ plt.legend([
     'grad_norm_V_in',
     'grad_norm_V_out'
 ])
-
-
-# In[42]:
-
-
-loss_compute()
 
